@@ -74,7 +74,7 @@ async function createReport(reportFields) {
 
   try {
     const { rows: [report] } = await client.query(`
-    INSERT INTO reports(title, location, description, password)
+    INSERT INTO reports (title, location, description, password)
     VALUES ($1, $2, $3, $4)
     RETURNING *;
     `, [title, location, description, password])
